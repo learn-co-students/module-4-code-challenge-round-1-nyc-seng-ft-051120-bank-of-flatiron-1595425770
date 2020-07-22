@@ -86,10 +86,24 @@
     },
     {
       "date": "2020-07-22",
+      "description": "Payment to the Loch Ness Monster",
+      "category": "Gift",
+      "amount": 3.5,
+      "id": 13
+    },
+    {
+      "date": "2020-07-22",
       "description": "Way Too Much NYC Rent",
       "category": "Housing",
-      "amount": -8000,
+      "amount": -9000.99,
       "id": 14
+    },
+    {
+      "date": "2020-07-22",
+      "description": "Groceries",
+      "category": "Food",
+      "amount": -70,
+      "id": 15
     }
   ]
 }
