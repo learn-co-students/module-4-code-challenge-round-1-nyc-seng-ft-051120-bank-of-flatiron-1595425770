@@ -2,7 +2,10 @@ import React from "react";
 import Transaction from "./Transaction";
 
 const TransactionsList = (props) => {
-  // console.log(props)
+  console.log(props)
+
+
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -11,10 +14,10 @@ const TransactionsList = (props) => {
             <h3 className="ui center aligned header">Date</h3>
           </th>
           <th>
-            <h3 className="ui center aligned header">Description</h3>
+            <h3 onClick={props.sortByChange} name="description" value="description" className="ui center aligned header">{props.sortBy === 'description' ? '⬇️️ Description' : 'Description'}</h3>
           </th>
           <th>
-            <h3 className="ui center aligned header">Category</h3>
+            <h3 onClick={props.sortByChange} name="category" value="category" className="ui center aligned header">{props.sortBy === 'category' ? '⬇️️ Category' : 'Category'}</h3>
           </th>
           <th>
             <h3 className="ui center aligned header">Amount</h3>
