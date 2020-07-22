@@ -1,3 +1,9 @@
+// 7/22 JP Notes: Within TransactionsList: 
+  // <tr>
+    // <th>
+  // <tr>
+    // <td></td>    <--- I added this 
+
 import React, { Component } from "react";
 import AccountContainer from "./AccountContainer";
 import "../stylesheets/App.css";

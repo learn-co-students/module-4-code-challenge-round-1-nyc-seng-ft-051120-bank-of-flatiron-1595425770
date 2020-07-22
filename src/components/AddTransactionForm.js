@@ -1,6 +1,18 @@
+// 7/22 JP Note: wrt: state.id??
+
 import React, { Component } from "react";
 
 class AddTransactionForm extends Component {
+state = {
+  id: "",
+  date: "",
+  description: "",
+  category: "",
+  amount: ""
+}
+
+
+
   render() {
     return (
       <div className="ui segment">
