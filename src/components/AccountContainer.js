@@ -7,7 +7,9 @@ class AccountContainer extends Component {
 
   state = {
     transactions: [],
-    search: ''
+    search: '',
+    catClicked: false,
+    descClicked: false
   }
 
   componentDidMount(){
@@ -39,14 +41,29 @@ class AccountContainer extends Component {
     })
   }
 
+  // handleSortCat = () => {
+  //   this.setState({catClicked: true})
+    
+  //     let allTrans = this.state.transactions
+  //     let sortedTrans = [...allTrans]
+  //     sortedTrans.sort((a,b) => a.category - b.category)
+  //     this.setState({transactions: sortedTrans})
+    
+  //   console.log(sortedTrans);
+  // }
+
+  // handleSortDesc = () => {
+  //   this.setState({descClicked: true})
+  // }
+
   render() {
-    console.log(this.state)
+    console.log(this.state,)
     let filteredTrans = this.state.transactions.filter(tran => tran.description.toLowerCase().includes(this.state.search.toLowerCase()))
     return (
       <div>
         <Search handleSearch={this.handleSearch}/>
         <AddTransactionForm handleNewTrans={this.handleNewTrans}/>
-        <TransactionsList transactions={filteredTrans} handleDelete={this.handleDelete}/>
+        <TransactionsList transactions={filteredTrans} handleDelete={this.handleDelete} handleSortCat={this.handleSortCat} handleSortDesc={this.handleSortDesc}/>
       </div>
     );
   }

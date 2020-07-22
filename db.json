@@ -97,6 +97,13 @@
       "category": "Bill",
       "amount": "-50",
       "id": 15
+    },
+    {
+      "date": "2020-07-22",
+      "description": "Colonial Deli",
+      "category": "Food",
+      "amount": "20",
+      "id": 16
     }
   ]
 }
