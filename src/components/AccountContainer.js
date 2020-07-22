@@ -9,7 +9,7 @@ class AccountContainer extends Component {
       <div>
         <Search />
         <AddTransactionForm />
-        <TransactionsList />
+        {this.props.transactions.map(transaction => <TransactionsList key={transaction.id} {...transaction} />)}
       </div>
     );
   }
