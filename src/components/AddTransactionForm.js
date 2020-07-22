@@ -43,7 +43,6 @@ class AddTransactionForm extends Component {
     })
   }
 
-
   render() {
     // console.log(this.state)
     return (
