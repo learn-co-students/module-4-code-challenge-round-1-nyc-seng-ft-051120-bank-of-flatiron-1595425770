@@ -12,11 +12,16 @@ class AccountContainer extends Component {
     .then(resp=>resp.json())
     .then(transactions=>this.setState({transactions}))
   }
+
+  handleNewTransaction=(newTransaction)=>{
+    this.setState({transactions:[...this.state.transactions, newTransaction]})
+  }
+
   render() {
     return (
       <div>
         <Search />
-        <AddTransactionForm />
+        <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
         <TransactionsList transactions={this.state.transactions} />
       </div>
     );

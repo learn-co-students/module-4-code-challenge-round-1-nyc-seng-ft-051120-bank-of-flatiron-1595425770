@@ -83,6 +83,20 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-07-09",
+      "description": "Domino's",
+      "category": "Food",
+      "amount": "16",
+      "id": 13
+    },
+    {
+      "date": "2020-07-16",
+      "description": "Starbucks",
+      "category": "Food",
+      "amount": "-4.50",
+      "id": 14
     }
   ]
 }
