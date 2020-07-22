@@ -1,8 +1,8 @@
 import React from "react";
 
-const Transaction = ({ transaction }) => {
+const Transaction = ({ transaction, handleClick }) => {
   return (
-    <tr>
+    <tr onClick={(e) => handleClick(e, transaction.id)}>
       <td>{transaction.date}</td>
       <td>{transaction.description}</td>
       <td>{transaction.category}</td>

@@ -49,8 +49,10 @@ class AccountContainer extends Component {
       })
     })
     .then(r => r.json())
-    .then(data => {
-      console.log(data);
+    .then(trans => {
+     this.setState({
+       transactions: [...this.state.transactions, trans]
+     })
     })
     .then(this.setState({
       date: "",
@@ -66,6 +68,16 @@ class AccountContainer extends Component {
     })
   }
 
+  handleClick = (e, transId) => {
+    console.log('in the click', transId);
+    fetch(BASE_URL+`/transactions/${transId}`,{
+      method: 'DELETE'
+    })
+    let newTrans = this.state.transactions.filter(tId => tId !== transId)
+    this.setState({
+      transactions: newTrans
+    })
+  }
 
   render() {
     let searchTransactions = this.state.transactions.filter(trans => trans.description.toLowerCase().includes(this.state.search.toLowerCase()))
@@ -80,7 +92,10 @@ class AccountContainer extends Component {
         category={this.state.category}
         amount={this.state.amount}
         />
-        <TransactionsList transactions={searchTransactions}/>
+        <TransactionsList 
+        transactions={searchTransactions}
+        handleClick={this.handleClick}
+        />
       </div>
     );
   }
