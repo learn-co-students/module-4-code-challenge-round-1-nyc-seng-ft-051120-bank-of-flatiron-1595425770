@@ -49,9 +49,11 @@ class AccountContainer extends Component {
     if (this.state.sortBy === 'None'){
       return sortedTransactions
     } else if (this.state.sortBy === 'Category') {
-      return sortedTransactions.sort((a,b)=> a.category > b.category ? 1 : -1)
+      return sortedTransactions.sort((a,b)=> a.category.localeCompare(b.category))
+      // return sortedTransactions.sort((a,b)=> a.category > b.category ? 1 : -1)
     } else if (this.state.sortBy === 'Description') {
-      return sortedTransactions.sort((a,b)=> a.description > b.description ? 1 : -1)
+      return sortedTransactions.sort((a,b)=> a.description.localeCompare(b.description))
+      // return sortedTransactions.sort((a,b)=> a.description > b.description ? 1 : -1)
     }
   }
 
@@ -60,15 +62,15 @@ class AccountContainer extends Component {
     // let filteredTransactions= this.state.transactions.filter(transaction=> transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
     return (
       <div>
-        <h3>Sort Transactions By:</h3>
-        <div>
-          <select value={this.state.sortBy} onChange={this.handleSortChoice}> 
-            <option value="None">None</option>
-            <option value="Category">Category</option>
-            <option value="Description">Description</option>
+        <div className="sort">
+          <h3>Sort Transactions By:</h3>
+          <select className="dropdown" value={this.state.sortBy} onChange={this.handleSortChoice}> 
+            <option className="dropdown" value="None">None</option>
+            <option className="dropdown" value="Category">Category</option>
+            <option className="dropdown" value="Description">Description</option>
           </select>
-          <h3>- - - - - - - - </h3>
-        </div>
+        </div> 
+        <h3>💰 💲 💵  💲 💰 💲 💵  💲💰 💲 💵  💲💰 💲 💵  💲</h3>
         <Search search={this.state.search} handleChange={this.handleSearchChange}/>
         <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
         <TransactionsList transactions={filteredTransactions} delete={this.deleteTransaction}/>

@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   text-align: center;
+ 
 }
 
 input {
@@ -16,6 +17,7 @@ body {
 }
 
 .App {
+  
   text-align: center;
 }
 
@@ -24,4 +26,22 @@ body {
   background-color: #222;
   padding: 20px;
   color: white;
+}
+
+.sort{
+  background-color: burlywood;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 10em;
+  margin-left: 10em;
+  border-style: dotted;
+  border-radius: 10em;
+}
+
+.dropdown{
+  border-radius: 1em;
+  width: 15em;
+  height: 3em;
+  font-family:  'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: large;
 }
