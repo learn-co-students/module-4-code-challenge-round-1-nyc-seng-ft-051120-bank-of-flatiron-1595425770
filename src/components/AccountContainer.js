@@ -19,6 +19,11 @@ class AccountContainer extends Component {
     .then(resp => resp.json())
     .then(transaction => this.setState({ transaction }))
   }
+
+  handleNewTransaction = (newTransaction) => {
+    console.log(newTransaction)
+    this.setState({ transaction: [...this.state.transaction, newTransaction]})
+  }
   render() {
     return (
       <div>
