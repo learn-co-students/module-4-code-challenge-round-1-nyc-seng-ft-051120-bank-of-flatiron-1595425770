@@ -13,9 +13,9 @@ render(){
     <>
 <h3>Sort by:</h3>
 <select name="select" >
- <option value={a} selected={this.state.selected === a}>{a}</option>);
-  <option value={c} selected={this.state.selected === c}>{c}</option>);
-   <option value={d} selected={this.state.selected === d}>{d}</option>);
+ <option value={a} >{a}</option>);
+ <option value={c} >{c}</option>);
+ <option value={d} >{d}</option>);
 </select>
 </>
  )
