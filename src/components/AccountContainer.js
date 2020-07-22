@@ -5,7 +5,8 @@ import AddTransactionForm from "./AddTransactionForm";
 
 class AccountContainer extends Component {
   state={
-    transactions:[]
+    transactions:[],
+    search: ''
   }
   componentDidMount(){
     fetch('http://localhost:6001/transactions')
@@ -17,12 +18,15 @@ class AccountContainer extends Component {
     this.setState({transactions:[...this.state.transactions, newTransaction]})
   }
 
+  handleSearch=(e)=>this.setState({search:e.target.value})
+
   render() {
+    let searchedTransaction=this.state.transactions.filter(transaction=>transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
     return (
       <div>
-        <Search />
+        <Search search={this.state.search} handleSearch={this.handleSearch}/>
         <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
-        <TransactionsList transactions={this.state.transactions} />
+        <TransactionsList transactions={searchedTransaction} />
       </div>
     );
   }
