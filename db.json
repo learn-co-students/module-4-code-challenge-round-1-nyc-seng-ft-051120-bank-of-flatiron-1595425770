@@ -132,6 +132,13 @@
       "category": "Transportation",
       "amount": "25.00",
       "id": 19
+    },
+    {
+      "date": "2020-07-22",
+      "description": "Kitty",
+      "category": "Cat",
+      "amount": "20.00",
+      "id": 20
     }
   ]
 }

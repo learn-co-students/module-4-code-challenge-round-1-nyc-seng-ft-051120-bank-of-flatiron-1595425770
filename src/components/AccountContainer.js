@@ -26,13 +26,18 @@ class AccountContainer extends Component {
     this.setState({search: e.target.value})
   }
 
+  renderTransactions = () => {
+    let sortedTrans = this.state.transactions.sort((a, b) => a.category < b.category ? -1 : 1)
+    let filteredTransactions = sortedTrans.filter(transaction => transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
+    return <TransactionsList transactions={filteredTransactions} />
+  }
+
     render() {
-     let filteredTransactions = this.state.transactions.filter(transaction => transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
     return (
       <div>
         <Search handleSearch={this.handleSearch}/>
         <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
-        <TransactionsList transactions={filteredTransactions} />
+        {this.renderTransactions()}
       </div>
     );
   }
