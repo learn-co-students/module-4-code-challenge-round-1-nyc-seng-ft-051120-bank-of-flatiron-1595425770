@@ -90,27 +90,6 @@
       "category": "Coffee",
       "amount": "5.00",
       "id": 13
-    },
-    {
-      "date": "2020-07-22",
-      "description": "Whole Foods",
-      "category": "Food",
-      "amount": "-45.56",
-      "id": 14
-    },
-    {
-      "date": "2020-07-23",
-      "description": "Paycheck",
-      "category": "Wedding Gig",
-      "amount": "300.00",
-      "id": 15
-    },
-    {
-      "date": "2020-07-22",
-      "description": "Astor Place Wine",
-      "category": "Liqour",
-      "amount": "100.87",
-      "id": 16
     }
   ]
 }

@@ -45,16 +45,15 @@ class AddTransactionForm extends Component {
   }
 
   render() {
-    // console.log(this.state)
     return (
       <div className="ui segment">
         <form onSubmit={this.submitHandler} className="ui form">
           <div className="inline fields">
-            <input onChange={this.addTransactionHandler} value={this.state.value} type="date" name="date" />
+            <input onChange={this.addTransactionHandler} value={this.state.value} type="date" name="date" /> {/* get calendar to reset to mm/dd/yyyy? */}
             <input onChange={this.addTransactionHandler} value={this.state.description} type="text" name="description" placeholder="Description" />
             <input onChange={this.addTransactionHandler} value={this.state.category} type="text" name="category" placeholder="Category" />
             <input
-              onChange={this.addTransactionHandler} //get calendar to reset to mm/dd/yyyy?
+              onChange={this.addTransactionHandler} 
               value={this.state.amount}
               type="number"
               name="amount"

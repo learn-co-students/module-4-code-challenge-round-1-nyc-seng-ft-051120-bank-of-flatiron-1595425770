@@ -27,18 +27,33 @@ class AccountContainer extends Component {
   }
 
   searchHandler = (e) => {
-    // console.log(e.target.value)
     this.setState({
       searchInput: e.target.value
     })
   }
 
   sortHandler = (e) => {
-    // console.log(e.target.value)
     this.setState({
       sortInput: e.target.value
     })
   }
+  
+
+//Ran out of time!
+  // deleteHandler = (id) => {
+  //   console.log('hi')
+  //   fetch(`http://localhost:7000/transactions/${id}` , {
+  //     method: 'DELETE',
+  //     headers: {
+  //       'content-type': 'application/json'
+  //     }
+  //   })
+  //   .then(res => res.json())
+  //   .then( data => {
+  //     //  this.state.transactions.filter(transaction => transaction.id !== data.id )
+  //   })
+    
+  //  }
 
   render() {
     let filteredTransactions = [...this.state.transactions]
@@ -67,7 +82,8 @@ class AccountContainer extends Component {
         addTransaction={this.addTransaction} />
 
         <TransactionsList 
-        transactions={filteredTransactions} />
+        transactions={filteredTransactions}
+        delete={this.deleteHandler} />
       </div>
     );
   }
