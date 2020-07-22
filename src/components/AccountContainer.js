@@ -18,12 +18,19 @@ class AccountContainer extends Component {
     
   }
 
+  addTransaction = (transaction) =>{
+    this.setState({
+      transactions: [...this.state.transactions, transaction]
+    })
+  }
+
   render() {
     
     return (
       <div>
         <Search />
-        <AddTransactionForm />
+        <AddTransactionForm 
+        addTransaction={this.addTransaction}/>
         <TransactionsList 
         transactions={this.state.transactions}/>
       </div>

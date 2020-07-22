@@ -83,6 +83,27 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-07-22",
+      "description": "Starbucks",
+      "category": "Coffee",
+      "amount": "5.00",
+      "id": 13
+    },
+    {
+      "date": "2020-07-22",
+      "description": "Whole Foods",
+      "category": "Food",
+      "amount": "-45.56",
+      "id": 14
+    },
+    {
+      "date": "2020-07-23",
+      "description": "Paycheck",
+      "category": "Wedding Gig",
+      "amount": "300.00",
+      "id": 15
     }
   ]
 }
