@@ -97,6 +97,41 @@
       "category": "Food",
       "amount": "-4.50",
       "id": 14
+    },
+    {
+      "date": "2020-07-02",
+      "description": "gas",
+      "category": "Transportation",
+      "amount": "32",
+      "id": 15
+    },
+    {
+      "date": "2020-07-01",
+      "description": "taxi",
+      "category": "Transportation",
+      "amount": "-14",
+      "id": 16
+    },
+    {
+      "date": "2020-07-07",
+      "description": "Icecream",
+      "category": "Food",
+      "amount": "-4",
+      "id": 17
+    },
+    {
+      "date": "2020-07-04",
+      "description": "Bubble Tea",
+      "category": "Food",
+      "amount": "-4.30",
+      "id": 18
+    },
+    {
+      "date": "2020-07-06",
+      "description": "Jamba Juice",
+      "category": "Food",
+      "amount": "-6.25",
+      "id": 19
     }
   ]
 }

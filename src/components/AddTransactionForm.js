@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
-const initialState={
-  date:'',
-  description:'',
-  category:'',
-  amount:''
-}
+
 class AddTransactionForm extends Component {
-  state=initialState
+  initialState={
+    date:'',
+    description:'',
+    category:'',
+    amount:''
+  }
+  
+  state=this.initialState
 
   handleInput=(e)=>{
     this.setState({[e.target.name]: e.target.value})
@@ -30,15 +32,18 @@ class AddTransactionForm extends Component {
     })
     .then(resp=>resp.json())
     .then(newTransaction=>{
-      this.setState(initialState)
+      // this.setState(initialState)
       this.props.handleNewTransaction(newTransaction)
     })
+  }
+  handleFormReset = () => {
+    this.setState(() => this.initialState)
   }
 
   render() {
     return (
       <div className="ui segment">
-        <form className="ui form">
+        <form className="ui form" onReset={this.handleFormReset}>
           <div className="inline fields">
             <input type="date" name="date" onChange={this.handleInput}/>
             <input type="text" name="description" placeholder="Description" onChange={this.handleInput}/>
