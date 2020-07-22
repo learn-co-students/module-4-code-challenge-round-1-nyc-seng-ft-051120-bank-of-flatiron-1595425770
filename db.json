@@ -8,13 +8,6 @@
       "amount": 1000
     },
     {
-      "id": 2,
-      "date": "2019-12-01",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": -10.55
-    },
-    {
       "id": 3,
       "date": "2019-12-02",
       "description": "South by Southwest Quinoa Bowl at Fresh & Co",
@@ -81,7 +74,14 @@
       "date": "2020-07-22",
       "description": "Payment to the Loch Ness Monster",
       "category": "Gift",
-      "amount": 3.5,
+      "amount": -3.5,
+      "id": 12
+    },
+    {
+      "date": "2020-07-22",
+      "description": "I Got 5's On It",
+      "category": "Entertainment",
+      "amount": -5,
       "id": 13
     }
   ]

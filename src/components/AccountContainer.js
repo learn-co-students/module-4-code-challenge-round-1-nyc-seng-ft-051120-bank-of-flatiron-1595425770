@@ -3,7 +3,7 @@ import TransactionsList from "./TransactionsList";
 import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
 
-const BASE_URL = 'http://localhost:6001'
+const BASE_URL = 'http://localhost:6001/transactions'
 
 class AccountContainer extends Component {
 
@@ -21,7 +21,7 @@ class AccountContainer extends Component {
   }
 
   getTransactions = () => {
-    fetch(BASE_URL+'/transactions')
+    fetch(BASE_URL)
     .then(r => r.json())
     .then(data => {
       this.setState({
@@ -38,7 +38,7 @@ class AccountContainer extends Component {
 
   handleSubmit = (e, transObj) => {
     e.preventDefault()
-    fetch(BASE_URL+'/transactions',{
+    fetch(BASE_URL,{
       method: 'POST',
       headers: {'content-type':'application/json'},
       body: JSON.stringify({
@@ -50,9 +50,9 @@ class AccountContainer extends Component {
     })
     .then(r => r.json())
     .then(trans => {
-     this.setState({
-       transactions: [...this.state.transactions, trans]
-     })
+      this.setState({
+        transactions: [...this.state.transactions, trans]
+      })
     })
     .then(this.setState({
       date: "",
@@ -69,14 +69,12 @@ class AccountContainer extends Component {
   }
 
   handleClick = (e, transId) => {
-    console.log('in the click', transId);
-    fetch(BASE_URL+`/transactions/${transId}`,{
+    fetch(BASE_URL+`/${transId}`,{
       method: 'DELETE'
     })
-    let newTrans = this.state.transactions.filter(tId => tId !== transId)
-    this.setState({
-      transactions: newTrans
-    })
+    .then(r => r.json())
+    .then(this.getTransactions())
+    
   }
 
   render() {
