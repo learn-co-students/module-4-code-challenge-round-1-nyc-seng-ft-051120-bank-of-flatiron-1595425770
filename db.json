@@ -90,6 +90,21 @@
       "category": "House rent",
       "amount": "1450",
       "id": 13
+    },
+    {
+      "date": "2020-07-23",
+      "description": "Random expanse",
+      "category": "food",
+      "amount": "20",
+      "": "s",
+      "id": 14
+    },
+    {
+      "date": "2020-08-01",
+      "description": "random",
+      "category": "food",
+      "amount": "23",
+      "id": 15
     }
   ]
 }

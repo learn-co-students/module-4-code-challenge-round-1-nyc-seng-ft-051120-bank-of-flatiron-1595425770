@@ -22,7 +22,7 @@ class AccountContainer extends Component {
     fetch('http://localhost:6001/transactions')
     .then(res => res.json())
     .then(transactions => {
-      this.setState({ transactions: transactions })
+      this.setState({ transactions })
     })
   }
 
@@ -53,7 +53,7 @@ class AccountContainer extends Component {
       newTransaction: { ...this.state.newTransaction, [e.target.name]: e.target.value}
     })
   }
-
+  handleSearchChange = e => this.setState({ [e.target.name]: e.target.value })
   renderSearch = () => {
     let filterTransaction = this.state.transactions.filter(transaction => 
       transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
@@ -62,7 +62,7 @@ class AccountContainer extends Component {
     // console.log(this.state);
     return (
       <div>
-        <Search />
+        <Search handleSearchChange={this.handleSearchChange} search={this.state.search}/>
         <AddTransactionForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} newTransaction={this.state.newTransaction}/>
         <TransactionsList transactions={this.state.transactions}/>
       </div>
