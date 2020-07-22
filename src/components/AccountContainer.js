@@ -6,7 +6,14 @@ import AddTransactionForm from "./AddTransactionForm";
 class AccountContainer extends Component {
   
   state = {
-    transArray: []
+    transArray: [],
+    search: '',
+    newTrans: {
+      date: '',
+      description: '',
+      category: '',
+      amount: '', 
+    }
   }
   
   componentDidMount() {
@@ -18,14 +25,64 @@ class AccountContainer extends Component {
         })
       })
   }
+
+  handleSearchChange = e => {
+    this.setState({
+      search: e.target.value
+    })
+  }
+
+  handleChange = e => {
+    this.setState({
+      newTrans: {
+        ...this.state.newTrans,
+        [e.target.name]: e.target.value
+      }
+    })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    fetch('http://localhost:6001/transactions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+         Accept: 'application/json'
+      },
+      body: JSON.stringify(this.state.newTrans)
+      })
+      .then(resp => resp.json())
+      .then(newTrans => {
+        this.setState({
+          transArray: [...this.state.transArray, newTrans],
+          newTrans: {
+            date: '',
+            description: '',
+            category: '',
+            amount: '', 
+          }
+
+        })
+      })
+    
+  }
   
   render() {
     console.log(this.state)
+    let searchedTrans = this.state.transArray.filter(trans => trans.description.toLowerCase().includes(this.state.search.toLowerCase()))
     return (
       <div>
-        <Search />
-        <AddTransactionForm />
-        <TransactionsList transArray={this.state.transArray}/>
+        <Search 
+          handleSearchChange={this.handleSearchChange}
+          search={this.state.search}
+          />
+        <AddTransactionForm 
+          newTrans={this.state.newTrans}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        
+        />
+        <TransactionsList transArray={searchedTrans}/>
       </div>
     );
   }
