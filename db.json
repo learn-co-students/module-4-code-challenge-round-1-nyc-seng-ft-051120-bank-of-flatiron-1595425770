@@ -90,6 +90,13 @@
       "category": "Guitars",
       "amount": "0.06",
       "id": 13
+    },
+    {
+      "date": "2020-07-15",
+      "description": "For Hair Dye",
+      "category": "Income",
+      "amount": "0.09",
+      "id": 14
     }
   ]
 }
