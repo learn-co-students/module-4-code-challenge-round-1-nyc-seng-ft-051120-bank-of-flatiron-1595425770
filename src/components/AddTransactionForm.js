@@ -11,7 +11,16 @@ state = {
   amount: ""
 }
 
+// e.target.name  --->  keys
+// e.target.value --->  values
+handleChange = e => {
+  this.setState( {[e.target.name]: e.target.value})
+}
 
+handleSubmit = e => {
+  e.preventDefault()
+  fetch("http://localhost:6001/transactions", )
+}
 
   render() {
     return (

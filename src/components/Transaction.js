@@ -12,3 +12,5 @@ const Transaction = () => {
 };
 
 export default Transaction;
+
+<td>{props.date}</td>
