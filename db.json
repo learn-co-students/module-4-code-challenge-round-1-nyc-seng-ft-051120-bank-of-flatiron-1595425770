@@ -90,6 +90,41 @@
       "category": "pls wont u work",
       "amount": "0.01",
       "id": 13
+    },
+    {
+      "date": "2020-07-23",
+      "description": "WHOOOO",
+      "category": "IS SHE",
+      "amount": "0.02",
+      "id": 14
+    },
+    {
+      "date": "2020-07-22",
+      "description": "WHOOO",
+      "category": "IS SHE",
+      "amount": "0.06",
+      "id": 15
+    },
+    {
+      "date": "2020-07-22",
+      "description": "do you believe in life after love",
+      "category": "DO YOU BEEEEEEELIEVE",
+      "amount": "020",
+      "id": 16
+    },
+    {
+      "date": "2020-07-22",
+      "description": "what up guy",
+      "category": "its me",
+      "amount": "-0.03",
+      "id": 17
+    },
+    {
+      "date": "",
+      "description": "sean",
+      "category": "seaaaaan",
+      "amount": "0.05",
+      "id": 18
     }
   ]
 }

@@ -41,7 +41,7 @@ class AccountContainer extends Component {
 
   handleNewTransaction = (transaction) => {
     this.setState(prevState => {
-      return {transactions: [...prevState.transactions, transaction]}
+      return {filteredTransactions: [...prevState.filteredTransactions, transaction]}
     })
   }
   render() {
