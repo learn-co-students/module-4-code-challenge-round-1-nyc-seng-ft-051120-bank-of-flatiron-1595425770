@@ -8,6 +8,32 @@ class AccountContainer extends Component {
    transactions: []
   }
 
+addTransaction = (transaction) => {
+   this.setState ({transactions: [...this.state.transactions, transaction]})
+}
+
+postTransaction = (e, transaction) => {
+  e.preventDefault()
+  console.log(transaction)
+  fetch('http://localhost:6001/transactions', {
+    method: 'POST',
+    headers: {
+       'Content-Type': 'application/json',
+       Accept: 'application/json'
+    },
+    body: JSON.stringify({
+      amount: transaction.amount,
+      category: transaction.category,
+      date: transaction.date,
+      description: transaction.description
+    })
+  })
+  .then(res => res.json())
+   .then(transaction => {
+      this.addTransaction(transaction)
+   })
+}
+
 fetchTransactions = () => {
    fetch('http://localhost:6001/transactions')
    .then(res => res.json())
@@ -17,6 +43,7 @@ fetchTransactions = () => {
    })
 }
 
+
 componentDidMount(){
  this.fetchTransactions()
 }
@@ -25,8 +52,8 @@ componentDidMount(){
     return (
       <div>
         <Search />
-        <AddTransactionForm />
-        <TransactionsList transactions={this.state.transactions}/>
+        <AddTransactionForm postTransaction ={this.postTransaction}/>
+        <TransactionsList transactions={this.state.transactions} />
       </div>
     );
   }
