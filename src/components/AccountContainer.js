@@ -28,7 +28,7 @@ class AccountContainer extends Component {
   }
 
   filterHandler =(e)=>{
-    console.log("Inside Filter")
+    this.setState({filter:e.target.value})
   }
 
   render() {
