@@ -7,6 +7,7 @@ class AccountContainer extends Component {
 
   state = {
     transactionsOG: [],
+    filter: '',
     date: '',
     description: '',
     category: '',
@@ -28,42 +29,46 @@ class AccountContainer extends Component {
       transactionsOG: [...this.state.transactionsOG, newTrans]
     })
   }
+  
   handleSubmit = (e) => {
     e.preventDefault()
-
     const newTrans = {
       date: this.state.date,
       description: this.state.description,
       category: this.state.category,
       amount: this.state.amount
     }
-
     fetch(`http://localhost:6001/transactions`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'content-type': 'application/json',
+        'accept': 'application/json'
       },
       body: JSON.stringify(newTrans)
     })
       .then(resp => resp.json())
       .then(newTrans => {this.addNewTrans(newTrans)})
-      .then( ()=> this.setState({date: '', description: '', category: '', amount: ''}))
+      .then(()=> this.setState({date: '', description: '', category: '', amount: ''}))
+  }
+
+  handleFilter = (e) => {
+    this.setState({filter: e.target.value})
   }
 
   arrayRender = () => {
     let arrayToReturn = this.state.transactionsOG.filter(transaction => {
-      return(
-        transaction
+      return (
+        transaction.description.toLowerCase().includes(this.state.filter.toLowerCase())
       )
     })
+    return arrayToReturn
   }
 
   render() {
     // console.log(this.state.transactionsOG)
     return (
       <div>
-        <Search />
+        <Search filter={this.state.filter} handleFilter={this.handleFilter}/>
         <AddTransactionForm 
           handleSubmit={this.handleSubmit} 
           handleChange={this.handleChange}
@@ -71,7 +76,7 @@ class AccountContainer extends Component {
           description={this.state.description}
           category={this.state.category}
           amount={this.state.amount}/>
-        <TransactionsList transactions = {this.state.transactionsOG}/>
+        <TransactionsList transactions = {this.arrayRender()}/>
       </div>
     );
   }
