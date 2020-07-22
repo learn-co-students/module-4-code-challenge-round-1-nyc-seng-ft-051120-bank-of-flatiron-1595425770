@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import TransactionsList from "./TransactionsList";
 import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
+import Sort from "./Sort"
 
 class AccountContainer extends Component {
 
   state = {
     transactions: [],
-    search: ""
+    search: "",
+    deleted: []
   }
 
   componentDidMount() {
@@ -31,17 +33,20 @@ class AccountContainer extends Component {
       method: 'DELETE'
     })
     .then(
-      console.log(id)
+      this.setState({deleted: [...this.state.deleted, id]}),
+      // console.log(id)
     )
   }
 
   render() {
-    // console.log(this.state)
+    console.log(this.state)
     let filteredTransactions = this.state.transactions.filter(transaction => transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
+    // let deletedTransactions = this.state.transactions.id === this.state.deleted ? 
     return (
       <div>
         <Search handleSearch={this.handleSearch} search={this.state.search}/>
         <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
+        <Sort />
         <TransactionsList transactions={filteredTransactions} handleDelete={this.handleDelete}/>
       </div>
     );
