@@ -83,6 +83,27 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-07-23",
+      "description": "Food",
+      "category": "Chipotle Return",
+      "amount": 10,
+      "id": 13
+    },
+    {
+      "date": "2020-07-24",
+      "description": "Income",
+      "category": "Paycheck from Enemy",
+      "amount": 1000,
+      "id": 14
+    },
+    {
+      "date": "",
+      "description": "Food",
+      "category": "Shop Rite",
+      "amount": -250,
+      "id": 15
     }
   ]
 }
