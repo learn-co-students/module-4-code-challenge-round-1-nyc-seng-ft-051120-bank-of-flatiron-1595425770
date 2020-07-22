@@ -85,32 +85,25 @@
       "amount": -975
     },
     {
-      "date": "10",
-      "description": "Big Food",
-      "category": "Food",
-      "amount": "10",
+      "date": "2020-07-22",
+      "description": "a",
+      "category": "aa",
+      "amount": "1",
       "id": 13
     },
     {
-      "date": "2020-07-04",
-      "description": "More",
-      "category": "Food",
-      "amount": "100",
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": 0,
       "id": 14
     },
     {
-      "date": "2020-07-04",
-      "description": "game",
-      "category": "game",
-      "amount": "20",
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": 0,
       "id": 15
-    },
-    {
-      "date": "2020-07-31",
-      "description": "Video Game",
-      "category": "Game",
-      "amount": "50",
-      "id": 16
     }
   ]
 }

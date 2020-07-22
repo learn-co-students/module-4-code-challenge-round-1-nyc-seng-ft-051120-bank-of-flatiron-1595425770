@@ -25,6 +25,16 @@ class AccountContainer extends Component {
     this.setState({search: e.target.value})
   }
 
+  handleDelete = id => {
+    // console.log(id)
+    fetch(`http://localhost:6001/transactions/${id}`,{
+      method: 'DELETE'
+    })
+    .then(
+      console.log(id)
+    )
+  }
+
   render() {
     // console.log(this.state)
     let filteredTransactions = this.state.transactions.filter(transaction => transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
@@ -32,7 +42,7 @@ class AccountContainer extends Component {
       <div>
         <Search handleSearch={this.handleSearch} search={this.state.search}/>
         <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
-        <TransactionsList transactions={filteredTransactions}/>
+        <TransactionsList transactions={filteredTransactions} handleDelete={this.handleDelete}/>
       </div>
     );
   }
