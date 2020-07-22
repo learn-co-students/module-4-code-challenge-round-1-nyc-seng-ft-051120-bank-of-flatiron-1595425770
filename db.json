@@ -15,13 +15,6 @@
       "amount": -10.55
     },
     {
-      "id": 3,
-      "date": "2019-12-02",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": -10.55
-    },
-    {
       "id": 4,
       "date": "2019-12-04",
       "description": "Sunglasses, Urban Outfitters",
@@ -90,13 +83,6 @@
       "category": "Guitars",
       "amount": "0.06",
       "id": 13
-    },
-    {
-      "date": "2020-07-15",
-      "description": "For Hair Dye",
-      "category": "Income",
-      "amount": "0.09",
-      "id": 14
     }
   ]
 }

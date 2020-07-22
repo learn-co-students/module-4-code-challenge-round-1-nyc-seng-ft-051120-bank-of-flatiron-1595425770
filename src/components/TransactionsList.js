@@ -6,8 +6,9 @@ const TransactionsList = (props) => {
   
   const renderTrans = () => {
     return props.transArray.map(trans => <Transaction 
-      id={trans.id}
+      key={trans.id}
       trans={trans}
+      deleteTrans={props.deleteTrans}
     />)
   }
   

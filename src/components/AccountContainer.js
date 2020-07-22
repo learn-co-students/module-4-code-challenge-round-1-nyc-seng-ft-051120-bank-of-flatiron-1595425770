@@ -66,6 +66,16 @@ class AccountContainer extends Component {
       })
     
   }
+
+  deleteTrans = (id) => {
+    fetch(`http://localhost:6001/transactions/${id}`, {
+      method: "DELETE"
+    })
+      this.setState({
+        transArray: [...this.state.transArray.filter(trans => trans.id !== id)]
+      })
+
+  }
   
   render() {
     console.log(this.state)
@@ -80,9 +90,12 @@ class AccountContainer extends Component {
           newTrans={this.state.newTrans}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-        
+
         />
-        <TransactionsList transArray={searchedTrans}/>
+        <TransactionsList 
+        transArray={searchedTrans}
+        deleteTrans={this.deleteTrans}
+        />
       </div>
     );
   }
