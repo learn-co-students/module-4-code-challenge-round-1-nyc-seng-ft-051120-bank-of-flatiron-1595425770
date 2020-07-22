@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TransactionsList from "./TransactionsList";
 import Search from "./Search";
+import Filter from "./Filter";
 import AddTransactionForm from "./AddTransactionForm";
 
 class AccountContainer extends Component {
@@ -58,6 +59,7 @@ componentDidMount(){
     return (
       <div>
         <Search setQuery={this.setQuery}/>
+         <Filter/>
         <AddTransactionForm postTransaction ={this.postTransaction}/>
         <TransactionsList transactions={this.state.transactions} searchQuery={this.state.searchQuery}/>
       </div>
