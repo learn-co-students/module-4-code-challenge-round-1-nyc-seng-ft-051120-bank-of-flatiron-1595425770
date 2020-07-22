@@ -7,7 +7,8 @@ class AccountContainer extends Component {
 
   state = {
     transactions: [],
-    searchInput: ''
+    searchInput: '',
+    sortInput: ''
   }
   
   componentDidMount(){
@@ -32,17 +33,39 @@ class AccountContainer extends Component {
     })
   }
 
+  sortHandler = (e) => {
+    // console.log(e.target.value)
+    this.setState({
+      sortInput: e.target.value
+    })
+  }
+
   render() {
     let filteredTransactions = [...this.state.transactions]
+    
     filteredTransactions = filteredTransactions.filter( transaction => 
       transaction.description.toLowerCase().includes(this.state.searchInput.toLowerCase()))
+    
+    if(this.state.sortInput === 'alphabetically'){
+      filteredTransactions.sort((a,b) => (a.description > b.description ? 1 : -1 ))
+    }
+    else if(this.state.sortInput === 'category'){
+      filteredTransactions.sort((a,b) => (a.category > b.category ? 1 : -1 ))
+    }
+    else if(this.state.sortInput === 'amount'){
+      filteredTransactions.sort((a,b) => (a.amount > b.amount ? 1 : -1 ))
+    }
+    
     return (
       <div>
         <Search 
         searchHandler={this.searchHandler}
-        search={this.state.searchInput} />
+        search={this.state.searchInput}
+        sortHandler={this.sortHandler}  />
+
         <AddTransactionForm 
         addTransaction={this.addTransaction} />
+
         <TransactionsList 
         transactions={filteredTransactions} />
       </div>
