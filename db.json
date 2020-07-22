@@ -104,6 +104,13 @@
       "category": "Shop Rite",
       "amount": -250,
       "id": 15
+    },
+    {
+      "date": "2020-07-24",
+      "description": "Paycheck from Lumber",
+      "category": "Income",
+      "amount": 2000,
+      "id": 16
     }
   ]
 }
