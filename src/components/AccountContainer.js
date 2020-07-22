@@ -23,13 +23,13 @@ class AccountContainer extends Component {
     }
 
     handleSearch = (searchWord) => {
-        this.setState({search: searchWord})
+        this.setState({searchTerm: searchWord})
     }
 
 
     render() {
         //console.log(this.state.transactions)
-        const filteredTransactions = this.state.transactions.filter(transaction => transaction.description.includes(this.state.searchTerm))
+        const filteredTransactions = this.state.transactions.filter(transaction => transaction.description.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
         return (
             <div>
                 <Search

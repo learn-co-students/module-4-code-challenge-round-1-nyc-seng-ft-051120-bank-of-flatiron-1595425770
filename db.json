@@ -90,6 +90,13 @@
       "category": "",
       "amount": "0.05",
       "id": 13
+    },
+    {
+      "date": "2020-07-18",
+      "description": "DONE",
+      "category": "",
+      "amount": "1000000000",
+      "id": 14
     }
   ]
 }
