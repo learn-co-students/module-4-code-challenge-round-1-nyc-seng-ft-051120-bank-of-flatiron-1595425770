@@ -90,6 +90,13 @@
       "category": "Gift",
       "amount": "100",
       "id": 13
+    },
+    {
+      "date": "2020-07-18",
+      "description": "OLIVE GARDEN",
+      "category": "FOOD",
+      "amount": "20",
+      "id": 14
     }
   ]
 }

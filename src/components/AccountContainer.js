@@ -64,7 +64,13 @@ class AccountContainer extends Component {
     fetch(API,ServerData)
     .then(resp=>resp.json())
     .then(newTransaction=>{
-        this.setState({transactions:[...this.state.transactions,newTransaction]})
+        // this.setState({transactions:[...this.state.transactions,newTransaction]})
+        this.setState(prevState=>{
+          const newState = {...prevState}
+          newState.transactions = [...prevState.transactions,newTransaction]
+          newState.transactionFormFields ={...transactionFormFieldsInitialState}
+          return newState
+        })
     })
   }
 
