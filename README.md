@@ -51,3 +51,15 @@ As a user, I should be able to:
 ## Rubric
 
 You can find the rubric for this assessment [here](https://github.com/learn-co-curriculum/se-rubrics/blob/master/module-4.md).
+
+
+
+                            App
+                              \
+                              Account Container
+                              /        \             \
+                      Search   AddTransactionForm   TransactionsList
+                                                           |
+                                                       Transaction
+        <
+       
