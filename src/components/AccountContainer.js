@@ -8,6 +8,7 @@ const URL = "http://localhost:6001/transactions"
 class AccountContainer extends Component {
 
   state = {
+    searchText: '',
     transactions: [],
     date: "",
     description: "",
@@ -50,7 +51,7 @@ class AccountContainer extends Component {
       <div>
         <Search />
         <AddTransactionForm postTransaction={this.postTransaction} handleChange={this.handleChange} accState={this.state}/>
-        <TransactionsList transactions={this.state.transactions}/>
+        <TransactionsList searchText={ this.state.description } transactions= { this.state.transactions }/>
       </div>
     );
   }

@@ -20,7 +20,9 @@ const TransactionsList = (props) => {
           </th>
         </tr>
         {/* render Transactions here */}
-        {props.transactions.map( x => <Transaction transaction={ x }/>)}
+        {props.transactions
+        .filter(x => x.description.toLowerCase().includes(props.searchText.toLowerCase()))
+        .map( x => <Transaction transaction={ x }/>)}
       </tbody>
     </table>
   );
