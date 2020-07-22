@@ -118,6 +118,13 @@
       "category": "aaa",
       "amount": 55,
       "id": 17
+    },
+    {
+      "date": "1976-12-15",
+      "description": "ok",
+      "category": "dokey",
+      "amount": 21,
+      "id": 18
     }
   ]
 }
