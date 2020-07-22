@@ -7,6 +7,7 @@ class AccountContainer extends Component {
 
     state = {
         transactions: [],
+        searchTerm: ''
     }
 
     fetchData = () => {
@@ -21,14 +22,26 @@ class AccountContainer extends Component {
         this.fetchData()
     }
 
+    handleSearch = (searchWord) => {
+        this.setState({search: searchWord})
+    }
+
 
     render() {
-        console.log(this.state.transactions)
+        //console.log(this.state.transactions)
+        const filteredTransactions = this.state.transactions.filter(transaction => transaction.description.includes(this.state.searchTerm))
         return (
             <div>
-                <Search />
-                <AddTransactionForm />
-                <TransactionsList transactions={this.state.transactions}/>
+                <Search
+                    handleSearch={this.handleSearch}
+                />
+                <AddTransactionForm
+                    rerenderTransactions={this.fetchData}
+                />
+                <TransactionsList
+                transactions={filteredTransactions}
+
+                />
             </div>
         );
     }
