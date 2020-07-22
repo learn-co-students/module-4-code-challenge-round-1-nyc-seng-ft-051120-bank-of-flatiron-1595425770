@@ -10,7 +10,7 @@ class AccountContainer extends Component {
   }
 
   searchValue = (value) => {
-
+    this.setState({ search: value})
   }
 
 componentDidMount(){
@@ -31,7 +31,7 @@ this.setState({allTrans: [...this.state.allTrans, newTrans]})
 
     return (
       <div>
-        <Search />
+        <Search searchValue={this.searchValue}/>
         <AddTransactionForm addNew={this.addNewTrans}/>
         <TransactionsList allTrans={searchedTrans}/>
       </div>
