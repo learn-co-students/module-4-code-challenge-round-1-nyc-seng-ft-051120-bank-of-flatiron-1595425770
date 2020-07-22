@@ -5,7 +5,12 @@ import AddTransactionForm from "./AddTransactionForm";
 
 class AccountContainer extends Component {
   state = {
-   transactions: []
+   transactions: [],
+   searchQuery: null
+  }
+
+setQuery = (e) => {
+  this.setState({searchQuery: e.target.value})
   }
 
 addTransaction = (transaction) => {
@@ -49,11 +54,12 @@ componentDidMount(){
 }
 
   render() {
+  console.log(this.state)
     return (
       <div>
-        <Search />
+        <Search setQuery={this.setQuery}/>
         <AddTransactionForm postTransaction ={this.postTransaction}/>
-        <TransactionsList transactions={this.state.transactions} />
+        <TransactionsList transactions={this.state.transactions} searchQuery={this.state.searchQuery}/>
       </div>
     );
   }

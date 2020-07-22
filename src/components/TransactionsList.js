@@ -2,7 +2,9 @@ import React from "react";
 import Transaction from "./Transaction";
 
 const TransactionsList = (props) => {
-  console.log(props)
+ let filteredTransactions = props.transactions.filter( trans => trans.description.includes(`${props.searchQuery}`))
+ let displayTransactions = props.searchQuery === null ? props.transactions : filteredTransactions
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -21,7 +23,7 @@ const TransactionsList = (props) => {
           </th>
         </tr>
         {
-          props.transactions.map((transaction, index) =>
+          displayTransactions.map((transaction, index) =>
            <Transaction key={transaction.id} transaction={transaction} />
         )
         }
