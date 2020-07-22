@@ -29,7 +29,7 @@ class AccountContainer extends Component {
     
       return (
       <div>
-        <Search onChange={this.handleChange} />
+        <Search onChange={this.handleChange} value={this.state.search}/>
         <AddTransactionForm addNewTransaction={this.createNewTransaction}/>
         <TransactionsList transactions={filteredTransactions}/>
       </div>

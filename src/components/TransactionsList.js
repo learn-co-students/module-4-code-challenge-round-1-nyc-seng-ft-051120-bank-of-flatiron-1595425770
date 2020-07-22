@@ -2,7 +2,7 @@ import React from "react";
 import Transaction from "./Transaction";
 
 const TransactionsList = (props) => {
-  console.log(props.transactions)
+  // console.log(props.transactions)
   return (
     <table className="ui celled striped padded table">
       <tbody>
