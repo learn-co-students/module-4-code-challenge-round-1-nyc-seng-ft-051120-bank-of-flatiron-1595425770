@@ -83,6 +83,13 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-07-03",
+      "description": "Bob Furniture",
+      "category": "Gift",
+      "amount": "100",
+      "id": 13
     }
   ]
 }
