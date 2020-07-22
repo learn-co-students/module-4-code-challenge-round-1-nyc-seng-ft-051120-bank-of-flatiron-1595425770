@@ -97,6 +97,20 @@
       "category": "Food",
       "amount": "100",
       "id": 14
+    },
+    {
+      "date": "2020-07-04",
+      "description": "game",
+      "category": "game",
+      "amount": "20",
+      "id": 15
+    },
+    {
+      "date": "2020-07-31",
+      "description": "Video Game",
+      "category": "Game",
+      "amount": "50",
+      "id": 16
     }
   ]
 }

@@ -31,8 +31,15 @@ class AddTransactionForm extends Component {
     })
     .then(resp => resp.json())
     .then(data => {
-      console.log(data)
-      
+      // console.log(data)
+      this.props.handleNewTransaction(data)
+      this.setState({
+        date: "",
+        description: "",
+        category: "",
+        amount: 0
+      })
+
     })
   }
 
