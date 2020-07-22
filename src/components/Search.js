@@ -6,9 +6,6 @@ const Search = (props) => {
       <input
         type="text"
         placeholder={"Search your Recent Transactions"}
-        // onChange={() => {
-        //   props.handleSearch
-        // }}
         onChange={props.handleSearch}
         value={props.search}
       />
