@@ -16,13 +16,18 @@ class AccountContainer extends Component {
     })
   }
 
+  handleNewTransaction = (newTransaction) => {
+    let newTransactionsArray = [...this.state.transactions, newTransaction]
+    this.setState({transactions: newTransactionsArray})
+  }
+
     render() {
       console.log(this.state)
     return (
       <div>
         <Search />
-        <AddTransactionForm />
-        <TransactionsList transactions={this.state.transactions}/>
+        <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
+        <TransactionsList transactions={this.state.transactions} />
       </div>
     );
   }
