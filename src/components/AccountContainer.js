@@ -44,6 +44,15 @@ class AccountContainer extends Component {
     transactions.sort((a,b) => a[this.state.sortBy].localeCompare(b[this.state.sortBy]))
   )
 
+
+  deleteTransaction = id => {
+    // fetch('http://localhost:6001/transactions'.concat('/id'))
+    console.log('http://localhost:6001/transactions'.concat(`/${id}`),{
+      method: "DELETE",
+      
+    })
+
+  }
   render() {
     // console.log(this.state.sortBy)
     let displayTransactions = this.state.transactions
@@ -53,7 +62,7 @@ class AccountContainer extends Component {
       <div>
         <Search handleSearchChange={this.handleSearchChange} search={this.state.search}/>
         <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
-        <TransactionsList transactions={displayTransactions} handleSortChange={this.handleSortChange} sortBy={this.state.sortBy}/>
+        <TransactionsList transactions={displayTransactions} handleSortChange={this.handleSortChange} sortBy={this.state.sortBy} deleteTransaction={this.deleteTransaction}/>
       </div>
     );
   }
