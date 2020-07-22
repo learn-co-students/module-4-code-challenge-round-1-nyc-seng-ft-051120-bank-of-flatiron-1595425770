@@ -32,13 +32,25 @@ class AccountContainer extends Component {
     return [...this.state.transactions].filter(transaction => transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
   }
 
+  removeTransaction = (id) => {
+    fetch(transactionsUrl.concat(`/${id}`), {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application.json'
+    }})
+    .then(emptyData => {
+      let newTs = this.state.transactions.filter(transaction => transaction.id != id)
+      this.setState({transactions: newTs}, ()=>console.log(this.state.transactions))
+    })
+  }
+
   render() {
 
     return (
       <div>
         <Search handleSearch={this.handleSearch} search={this.state.search}/>
         <AddTransactionForm addTransaction={this.addTransaction}/>
-        <TransactionsList transactions={this.searchImplemented()}/>
+        <TransactionsList transactions={this.searchImplemented()} removeTransaction={this.removeTransaction}/>
       </div>
     );
   }

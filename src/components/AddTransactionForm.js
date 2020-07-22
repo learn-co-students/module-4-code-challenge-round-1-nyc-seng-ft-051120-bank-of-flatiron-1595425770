@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 const initialState={
-  date: '',
+  date: null,
   description: '',
   category: '',
   amount: ''
