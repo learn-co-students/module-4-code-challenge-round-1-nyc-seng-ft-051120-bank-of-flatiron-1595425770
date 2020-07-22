@@ -19,7 +19,12 @@ const TransactionsList = (props) => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {props.transactions.map(transaction => < Transaction key={transaction.id} {...transaction} />)}
+        {props.transactions.map(transaction => {
+          if (this.props.filtered.includes(transaction)) {
+            < Transaction key={transaction.id} {...transaction} />}
+            else {null}
+
+            // ran out of time while trying to finish filter functions
       </tbody>
     </table>
   );

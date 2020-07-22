@@ -7,7 +7,7 @@ class AccountContainer extends Component {
 
   state = {
     transactions: [],
-    search: ""
+    filtered: []
   }
 
   componentDidMount() {
@@ -25,19 +25,19 @@ class AccountContainer extends Component {
   }
 
   handleSearch = (searchTerm) => {
-    let filteredState = this.state.transactions.filter(transaction => transaction.description.includes(searchTerm))
-    this.setState({transactions: filteredState})
+    let filteredState = this.state.transactions.descriptions.map(description => description.includes(searchTerm))
+    this.setState({filter: filteredState})
   }
   
 
   render() {
 
-    // console.log(this.state)
+    console.log(this.state.filter)
     return (
       <div>
         <Search search={this.state.search} handleSearch={this.handleSearch} />
         <AddTransactionForm addTransaction={this.addTransaction} />
-        <TransactionsList transactions={this.state.transactions}/>
+        <TransactionsList transactions={this.state.transactions} filtered={this.state.filtered}/>
       </div>
     );
   }
