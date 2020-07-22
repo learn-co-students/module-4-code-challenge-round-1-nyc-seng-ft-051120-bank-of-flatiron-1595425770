@@ -17,19 +17,40 @@ handleChange = e => {
   this.setState( {[e.target.name]: e.target.value})
 }
 
+// handleNewTransaction function in App.js 
 handleSubmit = e => {
   e.preventDefault()
-  fetch("http://localhost:6001/transactions", )
+  fetch("http://localhost:6001/transactions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(this.state)
+  })
+  .then(resp => resp.json())
+  .then(newTransaction => {
+    this.props.handleNewTransaction(newTransaction)
+    this.setState({
+      id: "",
+      date: "",
+      description: "",
+      category: "",
+      amount: ""
+    })
+  })
 }
 
   render() {
     return (
       <div className="ui segment">
-        <form className="ui form">
+
+        <form className="ui form" onSubmit={this.handleSubmit} >
+
           <div className="inline fields">
-            <input type="date" name="date" />
-            <input type="text" name="description" placeholder="Description" />
-            <input type="text" name="category" placeholder="Category" />
+            <input type="date" name="date" value={this.state.date} onChange={this.handleChange} />
+            <input type="text" name="description" value={this.state.description} placeholder="Description" onChange={this.handleChange} />
+            <input type="text" name="category" value={this.state.category} placeholder="Category" onChange={this.handleChange} />
             <input
               type="number"
               name="amount"
@@ -40,7 +61,9 @@ handleSubmit = e => {
           <button className="ui button" type="submit">
             Add Transaction
           </button>
+
         </form>
+
       </div>
     );
   }
