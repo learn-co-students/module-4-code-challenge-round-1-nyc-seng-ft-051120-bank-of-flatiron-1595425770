@@ -104,6 +104,13 @@
       "category": "Housing",
       "amount": -75,
       "id": 17
+    },
+    {
+      "date": "2020-07-22",
+      "description": "New Job",
+      "category": "Income",
+      "amount": 2000,
+      "id": 18
     }
   ]
 }

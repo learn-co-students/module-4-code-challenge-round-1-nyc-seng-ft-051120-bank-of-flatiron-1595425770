@@ -4,7 +4,7 @@ const Sort = (props) => {
   const { sortStatus, handleSort } = props
   return (
     <div className="ui large fluid icon input">
-      <label> Sort Transactions Alphabetically By: 
+      <label> Sort Transactions Alphabetically By:&nbsp;
         <select name='sortStatus' value={sortStatus} onChange={handleSort}>
             <option value="unsort">No Sort</option>
             <option value="category">Category</option>
