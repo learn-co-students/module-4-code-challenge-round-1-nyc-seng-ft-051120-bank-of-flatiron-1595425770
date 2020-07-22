@@ -86,13 +86,6 @@
     },
     {
       "date": "2020-07-22",
-      "description": "McDonalds",
-      "category": "Food",
-      "amount": "1",
-      "id": 13
-    },
-    {
-      "date": "2020-07-22",
       "description": "Ron and Ed's",
       "category": "Food",
       "amount": "30",

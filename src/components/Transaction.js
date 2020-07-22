@@ -8,6 +8,7 @@ const Transaction = (props) => {
       <td>{props.desc}</td>
       <td>{props.cat}</td>
       <td>{props.amt}</td>
+      <td onClick={() => {props.handleDelete(props.id)}}>X</td>
     </tr>
   );
 };
