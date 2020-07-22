@@ -23,7 +23,22 @@ class AccountContainer extends Component {
     }
 
     handleSearch = (searchWord) => {
-        this.setState({searchTerm: searchWord})
+        this.setState({ searchTerm: searchWord })
+    }
+
+    handleDelete = (id) => {
+        const options = {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
+
+        }
+
+        fetch(`http://localhost:6001/transactions/${id}`, options)
+        .then(r => r.json())
+        .then(this.fetchData)
     }
 
 
@@ -39,7 +54,8 @@ class AccountContainer extends Component {
                     rerenderTransactions={this.fetchData}
                 />
                 <TransactionsList
-                transactions={filteredTransactions}
+                    transactions={filteredTransactions}
+                    handleDelete={this.handleDelete}
 
                 />
             </div>
