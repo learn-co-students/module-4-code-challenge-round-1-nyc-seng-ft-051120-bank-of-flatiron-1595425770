@@ -8,7 +8,7 @@ class AccountContainer extends Component {
   state = {
     transactions: [],
     search: "",
-    sortBy: ""
+    sortBy: "description"
   }
 
   fetchTransactions = () => {
@@ -40,15 +40,20 @@ class AccountContainer extends Component {
     this.setState({sortBy: event.target.value})
   }
 
+  sortTransaction = (transactions) => (
+    transactions.sort((a,b) => a[this.state.sortBy].localeCompare(b[this.state.sortBy]))
+  )
+
   render() {
     // console.log(this.state.sortBy)
     let displayTransactions = this.state.transactions
     displayTransactions = this.searchTransactions(displayTransactions)
+    displayTransactions = this.sortTransaction(displayTransactions)
     return (
       <div>
         <Search handleSearchChange={this.handleSearchChange} search={this.state.search}/>
         <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
-        <TransactionsList transactions={displayTransactions} sortByChange={this.handleSortChange} sortBy={this.state.sortBy}/>
+        <TransactionsList transactions={displayTransactions} handleSortChange={this.handleSortChange} sortBy={this.state.sortBy}/>
       </div>
     );
   }
