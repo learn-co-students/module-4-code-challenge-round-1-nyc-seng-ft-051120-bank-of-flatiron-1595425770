@@ -2,7 +2,7 @@ import React from "react";
 
 const Search = (props) => {
   return (
-    <div className="ui  fluid icon input">
+    <div className="ui ß fluid icon input">
       <input
         type="text"
         placeholder={"Search your Recent Transactions"}

@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import TransactionsList from "./TransactionsList";
 import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
+import SortTransaction from "./sortTransaction";
 
 class AccountContainer extends Component {
   state={
     transactions: [],
-    searchKeyword: ''
+    searchKeyword: '',
+    sortBy: ''
     }
 
   componentDidMount(){
@@ -32,11 +34,16 @@ class AccountContainer extends Component {
     this.setState({transactions: [...this.state.transactions.filter(transition=> transition.id!==id)]})
   }
 
+  handleSortChange=(e)=>{
+    this.setState({sortBy: e.target.value})
+  }
+
   render() {
-    console.log(this.state.transactions)
+    console.log(this.state.sortBy)
     return (
       <div>
         <Search handleSearchChange={this.handleSearchChange}/>
+        <SortTransaction handleSortChange={this.handleSortChange} />
         <AddTransactionForm addTransaction={this.addTransaction}/>
         <TransactionsList transactions={this.renderSearchResult()} handleDelete={this.handleDelete}/>
       </div>
