@@ -5,15 +5,18 @@ import AddTransactionForm from "./AddTransactionForm";
 
 
 const URL = "http://localhost:6001/transactions"
+const initialFormState = {
+  date: "",
+  description: "",
+  category: "",
+  amount: 0
+}
 class AccountContainer extends Component {
 
   state = {
     searchText: '',
     transactions: [],
-    date: "",
-    description: "",
-    category: "",
-    amount: 0
+    ...initialFormState
   }
 
   componentDidMount() {
@@ -26,7 +29,6 @@ class AccountContainer extends Component {
   }
 
   handleChange = e => {
-    console.log("hel;;");
     this.setState({[e.target.name]:  e.target.value});
   }
 
@@ -43,7 +45,10 @@ class AccountContainer extends Component {
       }
     )).json()
 
-    this.setState({transactions: [...transactions, result] }) ;
+    this.setState({
+      transactions: [...transactions, result],
+      ...initialFormState
+    }) ;
   }
 
 

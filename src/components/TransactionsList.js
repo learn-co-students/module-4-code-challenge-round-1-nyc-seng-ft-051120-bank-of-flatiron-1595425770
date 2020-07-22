@@ -11,7 +11,9 @@ class TransactionsList extends React.Component {
   }
 
   selectSortingMethod = (e) => {
-    console.log(e.target);
+    console.log('hello', e.target.closest("th").dataset);
+    const sortingCategory = e.target.closest("th").dataset.category;
+    this.setState({sortedBy: sortingCategory});
   }
 
   render() {
@@ -23,29 +25,27 @@ class TransactionsList extends React.Component {
       <React.Fragment>
         <table className="ui celled striped padded table">
           <tbody>
-            <tr>
-              <th dataset="date">
-                <h3 className="ui center aligned header" onClick={this.selectSortingMethod} >Date</h3>
+            <tr style={{ cursor: "pointer" }}>
+              <th onClick={this.selectSortingMethod} data-category="date">
+                <h3 className="ui center aligned header"  >Date</h3>
               </th>
-              <th dataset="description"> 
+              <th onClick={this.selectSortingMethod} data-category="description"> 
                 <h3 className="ui center aligned header">Description</h3>
               </th>
-              <th dataset="category">
+              <th onClick={this.selectSortingMethod} data-category="category">
                 <h3 className="ui center aligned header">Category</h3>
               </th>
-              <th dataset="amount">
+              <th onClick={this.selectSortingMethod} data-category="amount">
                 <h3 className="ui center aligned header">Amount</h3>
               </th>
             </tr>
   
             {this.props.transactions
+              .filter(x => 
+                x.description.toLowerCase().includes(searchText.toLowerCase())
+              )
               .sort(((a, b) => (a[sortedBy] > b[sortedBy]) ? 1 : -1))
-              .filter(x => (
-                x.description.toLowerCase()
-                             .includes(
-                               searchText.toLowerCase()
-                              )
-              ))
+
               .map( x => <Transaction key={x.id} transaction={ x }/>)
             }
           </tbody>
