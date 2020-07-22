@@ -1,28 +1,36 @@
-import React from "react";
-import Transaction from "./Transaction";
+import React from 'react';
+import Transaction from './Transaction';
 
-const TransactionsList = () => {
-  return (
-    <table className="ui celled striped padded table">
-      <tbody>
-        <tr>
-          <th>
-            <h3 className="ui center aligned header">Date</h3>
-          </th>
-          <th>
-            <h3 className="ui center aligned header">Description</h3>
-          </th>
-          <th>
-            <h3 className="ui center aligned header">Category</h3>
-          </th>
-          <th>
-            <h3 className="ui center aligned header">Amount</h3>
-          </th>
-        </tr>
-        {/* render Transactions here */}
-      </tbody>
-    </table>
-  );
+const TransactionsList = props => {
+	return (
+		<table className='ui celled striped padded table'>
+			<tbody>
+				<tr>
+					<th>
+						<h3 className='ui center aligned header'>Date</h3>
+					</th>
+					<th>
+						<h3 className='ui center aligned header'>Description</h3>
+					</th>
+					<th>
+						<h3 className='ui center aligned header'>Category</h3>
+					</th>
+					<th>
+						<h3 className='ui center aligned header'>Amount</h3>
+					</th>
+				</tr>
+				{props.search.map(tran => (
+					<Transaction
+						id={tran.id}
+						date={tran.date}
+						description={tran.description}
+						category={tran.category}
+						amount={tran.amount}
+					/>
+				))}
+			</tbody>
+		</table>
+	);
 };
 
 export default TransactionsList;

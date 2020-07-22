@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-const Transaction = () => {
-  return (
-    <tr>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-    </tr>
-  );
+const Transaction = props => {
+	return (
+		<tr>
+			<td>{props.date}</td>
+			<td>{props.description}</td>
+			<td>{props.category}</td>
+			<td>{props.amount}</td>
+		</tr>
+	);
 };
 
 export default Transaction;

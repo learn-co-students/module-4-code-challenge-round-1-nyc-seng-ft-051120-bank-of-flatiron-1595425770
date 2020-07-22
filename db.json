@@ -83,6 +83,13 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-07-14",
+      "description": "Chick fil a",
+      "category": "Food",
+      "amount": "30",
+      "id": 13
     }
   ]
 }
