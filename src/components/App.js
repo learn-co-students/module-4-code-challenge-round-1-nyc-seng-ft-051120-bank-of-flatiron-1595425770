@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import AccountContainer from "./AccountContainer";
 import "../stylesheets/App.css";
 
-class App extends Component {
+class App extends Component {  
+
   render() {
     return (
       <div className="ui raised segment">
