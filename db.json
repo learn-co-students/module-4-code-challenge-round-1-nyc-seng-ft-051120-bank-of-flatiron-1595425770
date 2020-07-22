@@ -99,13 +99,6 @@
       "id": 14
     },
     {
-      "date": "2020-07-02",
-      "description": "gas",
-      "category": "Transportation",
-      "amount": "32",
-      "id": 15
-    },
-    {
       "date": "2020-07-01",
       "description": "taxi",
       "category": "Transportation",
@@ -132,13 +125,6 @@
       "category": "Food",
       "amount": "-6.25",
       "id": 19
-    },
-    {
-      "date": "2020-07-03",
-      "description": "Ice",
-      "category": "",
-      "amount": "",
-      "id": 20
     },
     {
       "date": "2020-07-03",
