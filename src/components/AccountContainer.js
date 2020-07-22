@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import TransactionsList from "./TransactionsList";
 import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
+import Sort from "./Sort";
 const transactionsUrl = 'http://localhost:6001/transactions'
 class AccountContainer extends Component {
   state={
     transactions: [],
-    search: ''
+    search: '',
+    sortStatus: 'unsort'
   }
 
   componentDidMount(){
@@ -28,8 +30,18 @@ class AccountContainer extends Component {
     this.setState({ [event.target.name]: event.target.value})
   }
 
-  searchImplemented = () => {
-    return [...this.state.transactions].filter(transaction => transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
+  searchAndSortImplemented = () => {
+    let filteredResults = [...this.state.transactions].filter(transaction => transaction.description.toLowerCase().includes(this.state.search.toLowerCase()))
+    if (this.state.sortStatus === 'unsort') {
+      return filteredResults
+    } else if (this.state.sortStatus === 'category') {
+      return filteredResults.sort((trans1, trans2) => trans1.category.localeCompare(trans2.category))
+    } else if (this.state.sortStatus === 'description') {
+      return filteredResults.sort((trans1, trans2) => trans1.description.localeCompare(trans2.description))
+    } 
+    
+  
+  
   }
 
   removeTransaction = (id) => {
@@ -44,13 +56,20 @@ class AccountContainer extends Component {
     })
   }
 
+  handleSort = event => {
+    this.setState({ [event.target.name]: event.target.value})
+  }
+
+
+ 
   render() {
 
     return (
       <div>
+        <Sort sortStatus={this.state.sortStatus} handleSort={this.handleSort} />
         <Search handleSearch={this.handleSearch} search={this.state.search}/>
         <AddTransactionForm addTransaction={this.addTransaction}/>
-        <TransactionsList transactions={this.searchImplemented()} removeTransaction={this.removeTransaction}/>
+        <TransactionsList transactions={this.searchAndSortImplemented()} removeTransaction={this.removeTransaction}/>
       </div>
     );
   }
