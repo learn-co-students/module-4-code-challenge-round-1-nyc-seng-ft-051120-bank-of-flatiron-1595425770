@@ -2,16 +2,15 @@ import React from "react";
 import Transaction from "./Transaction";
 
 class TransactionsList extends React.Component {
+  state = {
+    sortedBy: "date"
+  }
+  
   constructor(props) {
     super();
   }
 
-  state = {
-    sortedBy: "date"
-  }
-
   selectSortingMethod = (e) => {
-    console.log('hello', e.target.closest("th").dataset);
     const sortingCategory = e.target.closest("th").dataset.category;
     this.setState({sortedBy: sortingCategory});
   }
