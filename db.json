@@ -83,6 +83,34 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "",
+      "description": "AC Unit",
+      "category": "Home Appliances",
+      "amount": "100",
+      "id": 13
+    },
+    {
+      "date": "",
+      "description": "AC Unit",
+      "category": "Home Appliances",
+      "amount": "199",
+      "id": 14
+    },
+    {
+      "date": "",
+      "description": "AC Unit",
+      "category": "Home Appliances",
+      "amount": "100",
+      "id": 15
+    },
+    {
+      "date": "2020-07-25",
+      "description": "Keyboard",
+      "category": "Technology",
+      "amount": "99",
+      "id": 16
     }
   ]
 }
