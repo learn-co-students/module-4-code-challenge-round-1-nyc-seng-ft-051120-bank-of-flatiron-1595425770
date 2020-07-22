@@ -104,6 +104,13 @@
       "category": "Wedding Gig",
       "amount": "300.00",
       "id": 15
+    },
+    {
+      "date": "2020-07-22",
+      "description": "Astor Place Wine",
+      "category": "Liqour",
+      "amount": "100.87",
+      "id": 16
     }
   ]
 }

@@ -54,7 +54,7 @@ class AddTransactionForm extends Component {
             <input onChange={this.addTransactionHandler} value={this.state.description} type="text" name="description" placeholder="Description" />
             <input onChange={this.addTransactionHandler} value={this.state.category} type="text" name="category" placeholder="Category" />
             <input
-              onChange={this.addTransactionHandler}
+              onChange={this.addTransactionHandler} //get calendar to reset to mm/dd/yyyy?
               value={this.state.amount}
               type="number"
               name="amount"
