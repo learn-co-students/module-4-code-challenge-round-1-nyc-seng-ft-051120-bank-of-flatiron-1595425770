@@ -125,6 +125,20 @@
       "category": "teraz",
       "amount": 99,
       "id": 18
+    },
+    {
+      "date": null,
+      "description": "",
+      "category": "",
+      "amount": 0,
+      "id": 19
+    },
+    {
+      "date": null,
+      "description": "",
+      "category": "",
+      "amount": 0,
+      "id": 20
     }
   ]
 }
