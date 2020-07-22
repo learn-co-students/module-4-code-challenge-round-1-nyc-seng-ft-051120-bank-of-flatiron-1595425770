@@ -6,12 +6,12 @@ import AddTransactionForm from "./AddTransactionForm";
 class AccountContainer extends Component {
 
     state = {
-        transactionsArray: [],
+        transactions: [],
     }
 
     fetchData = () => {
         fetch('http://localhost:6001/transactions')
-            .then(r => r.jason())
+            .then(r => r.json())
             .then(transactions => {
                 this.setState({ transactions })
             })
@@ -23,11 +23,12 @@ class AccountContainer extends Component {
 
 
     render() {
+        console.log(this.state.transactions)
         return (
             <div>
                 <Search />
                 <AddTransactionForm />
-                <TransactionsList />
+                <TransactionsList transactions={this.state.transactions}/>
             </div>
         );
     }
