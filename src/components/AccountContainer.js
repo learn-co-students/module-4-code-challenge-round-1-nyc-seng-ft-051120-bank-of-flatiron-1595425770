@@ -26,6 +26,7 @@ class AccountContainer extends Component {
   }
 
   handleChange = e => {
+    console.log("hel;;");
     this.setState({[e.target.name]:  e.target.value});
   }
 
@@ -49,9 +50,9 @@ class AccountContainer extends Component {
   render() {
     return (
       <div>
-        <Search />
+        <Search  handleChange={this.handleChange} searchText={ this.state.searchText } />
         <AddTransactionForm postTransaction={this.postTransaction} handleChange={this.handleChange} accState={this.state}/>
-        <TransactionsList searchText={ this.state.description } transactions= { this.state.transactions }/>
+        <TransactionsList searchText={ this.state.searchText } transactions= { this.state.transactions }/>
       </div>
     );
   }
