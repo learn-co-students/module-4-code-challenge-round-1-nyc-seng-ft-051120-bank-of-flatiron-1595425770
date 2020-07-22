@@ -18,6 +18,9 @@ const TransactionsList = props => {
 					<th>
 						<h3 className='ui center aligned header'>Amount</h3>
 					</th>
+					<th>
+						<h3 className='ui center aligned header'>Delete</h3>
+					</th>
 				</tr>
 				{props.search.map(tran => (
 					<Transaction
@@ -25,7 +28,8 @@ const TransactionsList = props => {
 						date={tran.date}
 						description={tran.description}
 						category={tran.category}
-						amount={tran.amount}
+            amount={tran.amount}
+            handleDelete={props.handleDelete}
 					/>
 				))}
 			</tbody>
