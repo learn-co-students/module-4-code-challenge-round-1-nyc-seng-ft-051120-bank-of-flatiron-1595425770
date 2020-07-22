@@ -132,6 +132,27 @@
       "category": "Food",
       "amount": "-6.25",
       "id": 19
+    },
+    {
+      "date": "2020-07-03",
+      "description": "Ice",
+      "category": "",
+      "amount": "",
+      "id": 20
+    },
+    {
+      "date": "2020-07-03",
+      "description": "Icecream",
+      "category": "Food",
+      "amount": "-3.50",
+      "id": 21
+    },
+    {
+      "date": "2020-07-09",
+      "description": "taxi",
+      "category": "Transportation",
+      "amount": "-32",
+      "id": 22
     }
   ]
 }

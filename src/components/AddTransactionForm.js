@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 
-
+const initialState={
+  date:'',
+  description:'',
+  category:'',
+  amount:''
+}
 class AddTransactionForm extends Component {
-  initialState={
-    date:'',
-    description:'',
-    category:'',
-    amount:''
-  }
   
-  state=this.initialState
+  state=initialState
 
   handleInput=(e)=>{
     this.setState({[e.target.name]: e.target.value})
@@ -32,27 +31,25 @@ class AddTransactionForm extends Component {
     })
     .then(resp=>resp.json())
     .then(newTransaction=>{
-      // this.setState(initialState)
+      this.setState(initialState)
       this.props.handleNewTransaction(newTransaction)
     })
-  }
-  handleFormReset = () => {
-    this.setState(() => this.initialState)
   }
 
   render() {
     return (
       <div className="ui segment">
-        <form className="ui form" onReset={this.handleFormReset}>
+        <form className="ui form" >
           <div className="inline fields">
-            <input type="date" name="date" onChange={this.handleInput}/>
-            <input type="text" name="description" placeholder="Description" onChange={this.handleInput}/>
-            <input type="text" name="category" placeholder="Category" onChange={this.handleInput}/>
+            <input type="date" name="date" value={this.state.date} onChange={this.handleInput}/>
+            <input type="text" name="description" placeholder="Description" value={this.state.description} onChange={this.handleInput}/>
+            <input type="text" name="category" placeholder="Category" value={this.state.category} onChange={this.handleInput}/>
             <input
               type="number"
               name="amount"
               placeholder="Amount"
               step="0.01"
+              value={this.state.amount}
               onChange={this.handleInput}
             />
           </div>
