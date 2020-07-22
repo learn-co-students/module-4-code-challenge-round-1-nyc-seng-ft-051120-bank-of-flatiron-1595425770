@@ -26,7 +26,7 @@ class AccountContainer extends Component {
       <div>
         <Search search={this.state.search} handleSearch={this.handleSearch}/>
         <AddTransactionForm handleNewTransaction={this.handleNewTransaction}/>
-        <TransactionsList transactions={searchedTransaction} />
+        <TransactionsList transactions={searchedTransaction} deleteTransacttion={this.deleteTransacttion} />
       </div>
     );
   }
