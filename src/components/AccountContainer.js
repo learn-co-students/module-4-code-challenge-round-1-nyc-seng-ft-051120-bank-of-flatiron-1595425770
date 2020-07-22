@@ -35,7 +35,8 @@ class AccountContainer extends Component {
       [e.target.name]: e.target.value
     })
   }
-
+  
+  // could've refactored this to let the fetch call be its own function but ran out of time
   handleSubmit = (e, transObj) => {
     e.preventDefault()
     fetch(BASE_URL,{
@@ -68,6 +69,7 @@ class AccountContainer extends Component {
     })
   }
 
+  // same refactor comment here 
   handleClick = (e, transId) => {
     fetch(BASE_URL+`/${transId}`,{
       method: 'DELETE'
