@@ -83,6 +83,48 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": null,
+      "description": "",
+      "category": "",
+      "amount": 1,
+      "id": 13
+    },
+    {
+      "date": null,
+      "description": "",
+      "category": "",
+      "amount": 1,
+      "id": 14
+    },
+    {
+      "date": null,
+      "description": "",
+      "category": "",
+      "amount": 0,
+      "id": 15
+    },
+    {
+      "date": null,
+      "description": "ktos ",
+      "category": "cos",
+      "amount": 0,
+      "id": 16
+    },
+    {
+      "date": null,
+      "description": "jest",
+      "category": "ok",
+      "amount": 0,
+      "id": 17
+    },
+    {
+      "date": null,
+      "description": "a ",
+      "category": "teraz",
+      "amount": 99,
+      "id": 18
     }
   ]
 }

@@ -1,7 +1,12 @@
 import React from "react";
 
 const Search = () => {
+
+  
+
+
   return (
+    
     <div className="ui large fluid icon input">
       <input
         type="text"
